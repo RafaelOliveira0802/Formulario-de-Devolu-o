@@ -1,0 +1,185 @@
+/* Reset e Estilos Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    width: 100%;
+    max-width: 800px; /* Limite para telas grandes (1024px+) */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Formulário e Agrupamentos */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Evita zoom automático no iOS */
+}
+
+/* Fieldsets (Operação e Equipamentos) */
+fieldset {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #007bff;
+}
+
+/* Radio Groups */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input {
+    margin-right: 8px;
+}
+
+/* Item de Equipamento Dinâmico */
+.equipamento-item {
+    position: relative;
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    display: grid;
+    gap: 10px;
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.btn-remove {
+    background: #dc3545;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* --- RESPONSIVIDADE (Breakpoints) --- */
+
+/* Telas médias para grandes (Até 1024px) */
+@media (min-width: 600px) {
+    .equipamento-item {
+        grid-template-columns: 2fr 1fr; /* Nome e Qtd lado a lado */
+    }
+    .equipamento-motivo {
+        grid-column: span 2; /* Motivo ocupa a linha de baixo inteira */
+    }
+}
+
+/* Telas Pequenas (Mobile padrão - 480px abaixo) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h2 { font-size: 1.2rem; }
+
+    .radio-group {
+        flex-direction: column; /* Radios um embaixo do outro */
+        gap: 10px;
+    }
+}
+
+/* Telas Extremamente Pequenas (Abaixo de 250px) */
+@media (max-width: 250px) {
+    body { padding: 5px; }
+    
+    .container { padding: 10px; }
+    
+    label, legend {
+        font-size: 12px;
+    }
+    
+    input, select, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-remove {
+        top: 0;
+        right: 0;
+        border-radius: 0;
+    }
+}
