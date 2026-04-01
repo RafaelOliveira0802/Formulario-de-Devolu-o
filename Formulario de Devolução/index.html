@@ -3,88 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Equipamentos</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Acesso ao Sistema</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2>Solicitação de Equipamentos</h2>
-        <p>Preencha os dados abaixo para devolução ou reposição.</p>
+    <main class="login-container">
+        <section class="login-box">
+            <h1>Login Devolução</h1>
+            <p>Insira suas credenciais para acessar o formulário.</p>
 
-        <form id="equipForm" action="https://formspree.io/f/mreyegzv" method="POST">
-            
-            <section class="form-group">
-                <label for="tecnico">Nome do Técnico</label>
-                <input type="text" id="tecnico" name="tecnico" required placeholder="Digite seu nome completo">
-            </section>
-
-            <section class="form-group">
-                <label for="contrato">Contrato do Serviço</label>
-                <input type="text" id="contrato" name="contrato" required placeholder="Número do contrato">
-            </section>
-
-            <section class="form-group">
-                <label for="cliente">Nome do Cliente</label>
-                <input type="text" id="cliente" name="cliente" required placeholder="Nome do cliente" >
-            </section>
-
-            <fieldset class="tipo-operacao">
-                <legend>Tipo de Operação</legend>
-                <div class="radio-group">
-                    <label><input type="radio" name="operacao" value="Devolução" required> Devolução</label>
-                    <label><input type="radio" name="operacao" value="Devolução POC"> Devolução POC</label>
-                    <label><input type="radio" name="operacao" value="Reposição"> Reposição</label>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
                 </div>
-            </fieldset>
 
-            <fieldset id="lista-equipamentos">
-                <legend>Equipamentos</legend>
-                <div class="equipamento-item" data-index="0">
-                    <input type="text" name="equipamento[]" placeholder="Nome do Equipamento" required>
-                    <input type="number" name="qtd[]" min="1" placeholder="Qtd" required>
-                    <div class="equipamento-motivo">
-                        <legend>Motivo da Devolução ou Reposição</legend>
-                        <select name="motivo" id="motive" required>
-                            <option value="">Selecione o Motivo</option>
-                            <option value="nao liga">Não liga</option>
-                            <option value="estetica">Estética</option>
-                            <option value="nao cominica">Não Comunica</option>
-                            <option value="intermitencia">Intermitência</option>
-                            <option value="nao cadastra">Não Cadastra</option>
-                            <option value="falha tamper">Falha Tamper</option>
-                            <option value="equipamento travado">Equipamento Travado</option>
-                            <option value="nao detecta movimento">Não Detecta Movimento</option>
-                            <option value="bateria com problema">Bateria Com Problema</option>
-                            <option value="equipamento ok">Equipamento OK</option>
-                            <option value="disparo falso">Disparo Falso</option>
-                            <option value="utilizado do kit/venda">Utilizado do Kit / venda</option>
-                            <option value="devolucao">Devolução</option>
-                            <option value="troca em garantia">Troca em Garantia</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn-remove" onclick="removerCampo(this)">×</button>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
                 </div>
-            </fieldset>
 
-            <button type="button" id="addEquip" class="btn-secondary">+ Adicionar Equipamento</button>
+                <button type="submit" class="btn-login">Entrar</button>
+                <p id="errorMessage" class="error-msg"></p>
+            </form>
+        </section>
+    </main>
 
-            <section class="form-group">
-                <label for="destinatario">Enviar para:</label>
-                <select id="destinatario" name="_to" required>
-                    <option value="">Selecione o e-mail de destino</option>
-                    <option value="giovana@empresa.com">Giovana</option>
-                    <option value="Lucimeire@empresa.com">Lucimeire</option>
-                    <option value="marcelo@empresa.com">Marcelo</option>
-                    <option value="renato@empresa.com">Renato</option>
-                    <option value="valmir@empresa.com">Valmir</option>
-                </select>
-            </section>
-
-            <button type="submit" class="btn-submit">Enviar Solicitação</button>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

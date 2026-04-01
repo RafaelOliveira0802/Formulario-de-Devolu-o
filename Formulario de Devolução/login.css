@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+.error-msg {
+    color: #d9534f;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+}
+
+/* Configurações para telas abaixo de 1024px */
+@media (max-width: 1024px) {
+    body {
+        padding: 20px;
+    }
+    
+    .login-box {
+        padding: 30px; /* Reduz um pouco o espaçamento interno */
+    }
+}
+
+/* Configurações para telas menores (Tablets e Celulares grandes) */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 90%; /* A caixa ocupa mais espaço lateral em telas médias */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Ajustes finos para celulares pequenos (até 350px) */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 20px;
+        box-shadow: none; /* Remove a sombra para um visual mais limpo em telas pequenas */
+        background-color: transparent; /* Opcional: integra com o fundo da página */
+    }
+
+    .btn-login {
+        padding: 15px; /* Botão maior para facilitar o toque (touch) */
+        font-size: 18px;
+    }
+
+    .input-group input {
+        font-size: 16px; /* Evita que o iOS dê zoom automático ao focar no input */
+    }
+}
+
+/* Limite mínimo garantido para 350px */
+@media (max-width: 350px) {
+    .login-container {
+        padding: 10px;
+    }
+    
+    p {
+        font-size: 13px;
+    }
+}
